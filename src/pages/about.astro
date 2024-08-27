@@ -1,0 +1,135 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="À propos | Max Hamoui"
+  description="À propos de Max Hamoui"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="À propos"
+        tagline="Découvrez ci-dessous pour en savoir plus sur moi et mon parcours."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/at-work.jpg"
+          alt="Max Hamoui abd his dog following his path enlightened by the silver moon"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Parcours</h2>
+        <div class="content">
+          <p>
+            Je suis un développeur web débutant en reconversion professionnelle, profondément intéressé par la technologie et la création de solutions numériques. J'ai suivi une formation chez OpenClassrooms, où j'ai acquis des compétences fondamentales en développement web, tant sur le front-end que le back-end. Cette formation m'a permis de travailler sur des projets concrets et de développer une base solide en programmation.
+          </p></br>
+          <p>
+            En parallèle, j'ai poursuivi mon apprentissage de manière autodidacte. J'ai exploré diverses technologies, résolu des problèmes réels et développé des projets personnels pour approfondir mes compétences techniques et enrichir mon expérience.
+          </p></br>
+          <p>
+            Aujourd'hui, je suis enthousiaste à l'idée de mettre en pratique mes connaissances dans des projets stimulants. Mon objectif est de contribuer à des projets innovants et de continuer à évoluer dans ce domaine dynamique.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Formation</h2>
+        <div class="content">
+          <p>OpenClassrooms, 2021.</br>
+						Formation couvrant les compétences essentielles en développement web, incluant le front-end (HTML, CSS, JavaScript) et le back-end (Node.js, bases de données), avec des projets pratiques pour appliquer les connaissances acquises.</p></br>
+
+						<p>Apprentissage Autodidacte</br>
+							Exploration autodidacte de technologies supplémentaires et de frameworks modernes, résolution de problèmes réels, et développement de projets personnels pour approfondir et élargir les compétences en développement web.</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Compétences</h2>
+        <div class="content">
+          <p>Développement Front-End :</br>
+						 Création de pages web responsives et adaptatives avec HTML/CSS, utilisation des préprocesseurs comme Sass JavaScript, programmation interactive, manipulation du DOM, introduction aux frameworks comme React ou Vue.js.</br>
+						 Outils de Design : Utilisation de Figma ou Adobe XD pour la création de maquettes et prototypes.</p></br>
+
+          <p>Développement Back-End Node.js :</br>
+						Création de serveurs web, gestion des requêtes et des réponses, utilisation de bibliothèques comme Express.js.</br>
+						Base de données : Connaissance des systèmes de gestion de bases de données relationnelles (SQL) et non relationnelles (MongoDB).</br>
+						Conception et intégration d'APIs RESTful.</p></br>
+
+          <p>Compétences Complémentaires Git :</br>
+						Gestion de versions avec Git, collaboration via GitHub.</br>
+						Outils de Déploiement : Déploiement basique sur des plateformes comme Heroku ou Vercel.</br>
+						Résolution de Problèmes : Analyse et débogage de code, application de méthodes de résolution systématiques.</p></br>
+
+          <p>Compétences en Apprentissage Autodidacte
+						Auto-formation : </br>
+						Capacité à apprendre de nouvelles technologies de manière autonome, exploration de frameworks et d'outils récents.</br>
+						Projets Personnels : Développement de projets personnels pour appliquer les compétences acquises et expérimenter de nouvelles solutions.</p>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
