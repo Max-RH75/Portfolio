@@ -219,6 +219,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	.nav-items {
 		margin: 0;
 		display: flex;
+		white-space: nowrap;
 		flex-direction: column;
 		gap: 1rem;
 		font-size: var(--text-md);
@@ -349,7 +350,9 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		}
 
 		.socials {
-			display: none;
+			display: flex;
+			flex-wrap: nowrap;
+			gap: 0;
 		}
 	}
 
